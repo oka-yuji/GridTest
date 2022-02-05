@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    var symbols = ["keyboard", "hifispeaker.fill", "printer.fill", "tv.fill", "desktopcomputer", "headphones", "tv.music.note", "mic", "plus.bubble", "video"]
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 4)
+    var items = Array(1...1000).map { int in "Item\(int)" }
+    var items2 = Array(1...1000).map { "Item\($0)" }
+    let layout = [GridItem(.adaptive(minimum: <#T##CGFloat#>, maximum: <#T##CGFloat#>))]
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            //lazyVGrid
+            ScrollView {
+               
+            }
+            
+            //lazyHGrid
+            ScrollView(.horizontal) {
+                
+            }
+        }
     }
 }
 
