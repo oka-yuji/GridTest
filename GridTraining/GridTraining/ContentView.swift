@@ -12,7 +12,7 @@ struct ContentView: View {
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 4)
     var items = Array(1...1000).map { int in "Item\(int)" }
     var items2 = Array(1...1000).map { "Item\($0)" }
-    let layout = [GridItem(.adaptive(minimum: <#T##CGFloat#>, maximum: <#T##CGFloat#>))]
+    let layout = [GridItem(.adaptive(minimum: 10, maximum: 100))]
     var body: some View {
         VStack {
             //lazyVGrid

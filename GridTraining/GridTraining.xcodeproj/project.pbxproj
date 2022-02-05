@@ -11,6 +11,7 @@
 		287C306F27AE926200DAADC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C306E27AE926200DAADC1 /* ContentView.swift */; };
 		287C307127AE926200DAADC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287C307027AE926200DAADC1 /* Assets.xcassets */; };
 		287C307427AE926200DAADC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287C307327AE926200DAADC1 /* Preview Assets.xcassets */; };
+		287C307B27AE9DC600DAADC1 /* DocumentCodeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C307A27AE9DC600DAADC1 /* DocumentCodeTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		287C306E27AE926200DAADC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		287C307027AE926200DAADC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		287C307327AE926200DAADC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		287C307A27AE9DC600DAADC1 /* DocumentCodeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCodeTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				287C306C27AE926200DAADC1 /* GridTrainingApp.swift */,
 				287C306E27AE926200DAADC1 /* ContentView.swift */,
+				287C307A27AE9DC600DAADC1 /* DocumentCodeTest.swift */,
 				287C307027AE926200DAADC1 /* Assets.xcassets */,
 				287C307227AE926200DAADC1 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				287C306F27AE926200DAADC1 /* ContentView.swift in Sources */,
 				287C306D27AE926200DAADC1 /* GridTrainingApp.swift in Sources */,
+				287C307B27AE9DC600DAADC1 /* DocumentCodeTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
