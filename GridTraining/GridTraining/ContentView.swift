@@ -14,17 +14,7 @@ struct ContentView: View {
     var items2 = Array(1...1000).map { "Item\($0)" }
     let layout = [GridItem(.adaptive(minimum: 10, maximum: 100))]
     var body: some View {
-        VStack {
-            //lazyVGrid
-            ScrollView {
-               
-            }
-            
-            //lazyHGrid
-            ScrollView(.horizontal) {
-                
-            }
-        }
+        DocumentCodeTest()
     }
 }
 
