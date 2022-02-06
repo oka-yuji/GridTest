@@ -9,12 +9,16 @@ import SwiftUI
 
 struct DocumentCodeTest: View {
     let data = Array(1...1000)
-    let layout = [GridItem(.adaptive(minimum: 30))]
+    let layout = [GridItem(.adaptive(minimum: 100))]
     var body: some View {
         ScrollView {
             LazyVGrid(columns: layout) {
                 ForEach(data, id: \.self) { item in
-                    Text("\(item)")
+                    VStack {
+                        Text("\(item)")
+                          Rectangle()
+                            .frame(height: 5)
+                    }
                 }
             }
         }
