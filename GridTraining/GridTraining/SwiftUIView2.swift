@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct SwiftUIView2: View {
+    let data = Array(1...1000)
+    let layout = [
+        GridItem(.flexible(minimum: 80)),
+        GridItem(.flexible(minimum: 80))
+    ]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            LazyVGrid(columns: layout, spacing: 0) {
+                ForEach(data, id: \.self) { item in
+                    VStack {
+                        Text("\(item)")
+                          Rectangle()
+                            .frame(height: 5)
+                    }
+                }
+            }
+        }
     }
 }
 
