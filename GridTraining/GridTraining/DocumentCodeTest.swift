@@ -8,22 +8,21 @@
 import SwiftUI
 
 struct DocumentCodeTest: View {
-    let data = Array(1...1000)
-    let layout = [GridItem(.adaptive(minimum: 30))]
-    var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 10, maximum: 300)), count: 10)
-    var body: some View {
-        ScrollView {
-            LazyVGrid(columns: layout) {
-                ForEach(data, id: \.self) { item in
-                Text("\(item)")
-                }
+let data = Array(1...1000)
+let layout = [GridItem(.adaptive(minimum: 30))]
+var body: some View {
+    ScrollView {
+        LazyVGrid(columns: layout) {
+            ForEach(data, id: \.self) { item in
+            Text("\(item)")
             }
         }
     }
 }
+}
 
 struct DocumentCodeTest_Previews: PreviewProvider {
-    static var previews: some View {
-        DocumentCodeTest()
-    }
+static var previews: some View {
+    DocumentCodeTest()
+}
 }
