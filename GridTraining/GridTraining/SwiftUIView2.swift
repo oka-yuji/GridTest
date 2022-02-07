@@ -8,28 +8,29 @@
 import SwiftUI
 
 struct SwiftUIView2: View {
-    let data = Array(1...1000)
-    let layout = [
-        GridItem(.flexible(minimum: 80)),
-        GridItem(.flexible(minimum: 80))
-    ]
-    var body: some View {
-        ScrollView {
-            LazyVGrid(columns: layout, spacing: 0) {
-                ForEach(data, id: \.self) { item in
-                    VStack {
-                        Text("\(item)")
-                          Rectangle()
-                            .frame(height: 5)
-                    }
+let data = Array(1...100).map { "Index\($0)" }
+let layout = [
+    GridItem(.flexible(maximum: 80)),
+    GridItem(.flexible(maximum: 100), spacing: 1),
+    GridItem(.flexible(maximum: 150))
+]
+var body: some View {
+    ScrollView {
+        LazyVGrid(columns: layout, spacing: 0) {
+            ForEach(data, id: \.self) { item in
+                VStack {
+                    Text("\(item)")
+                      Rectangle()
+                        .frame(height: 5)
                 }
             }
         }
     }
 }
+}
 
 struct SwiftUIView2_Previews: PreviewProvider {
-    static var previews: some View {
-        SwiftUIView2()
-    }
+static var previews: some View {
+    SwiftUIView2()
+}
 }
