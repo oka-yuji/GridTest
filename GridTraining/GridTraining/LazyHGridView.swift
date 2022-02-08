@@ -1,26 +1,26 @@
 //
-//  SwiftUIView2.swift
+//  LazyHGridView.swift
 //  GridTraining
 //
-//  Created by oka yuuji on 2022/02/06.
+//  Created by oka yuuji on 2022/02/07.
 //
 
 import SwiftUI
 
-struct SwiftUIView2: View {
+struct LazyHGridView: View {
     let data = Array(1...100).map { "Index\($0)" }
     let layout = [
         GridItem(.flexible(maximum: 80)),
-        GridItem(.flexible(maximum: 100), spacing: 1),
+        GridItem(.flexible(maximum: 100), spacing: 100),
         GridItem(.flexible(maximum: 150))
     ]
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: layout, spacing: 0) {
+        ScrollView(.horizontal) {
+            LazyHGrid(rows: layout, spacing: 5) {
                 ForEach(data, id: \.self) { item in
                     VStack {
                         Text("\(item)")
-                        Rectangle()
+                          Rectangle()
                             .frame(height: 5)
                     }
                 }
@@ -29,8 +29,8 @@ struct SwiftUIView2: View {
     }
 }
 
-struct SwiftUIView2_Previews: PreviewProvider {
+struct LazyHGridView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIView2()
+        LazyHGridView()
     }
 }
