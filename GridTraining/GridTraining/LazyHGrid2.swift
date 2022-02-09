@@ -11,12 +11,12 @@ struct LazyHGrid2: View {
     let data = Array(1...1000)
     let layout = [GridItem(.adaptive(minimum: 50))]
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: layout) {
+        ScrollView(.horizontal) {
+            LazyHGrid(rows: layout) {
                 ForEach(data, id: \.self) { item in
-                    VStack {
+                    LazyVStack {
                         Text("\(item)")
-                          Rectangle()
+                        Rectangle()
                             .frame(height: 5)
                     }
                 }
