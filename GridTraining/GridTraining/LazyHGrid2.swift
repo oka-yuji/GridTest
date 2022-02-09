@@ -8,17 +8,11 @@
 import SwiftUI
 
 struct LazyHGrid2: View {
-    let data = Array(1...1000)
-    let layout = [GridItem(.adaptive(minimum: 50))]
     var body: some View {
         ScrollView(.horizontal) {
-            LazyHGrid(rows: layout) {
-                ForEach(data, id: \.self) { item in
-                    LazyVStack {
-                        Text("\(item)")
-                        Rectangle()
-                            .frame(height: 5)
-                    }
+            LazyHStack(alignment: .top, spacing: 10) {
+                ForEach(1...100, id: \.self) {
+                    Text("Column \($0)")
                 }
             }
         }
