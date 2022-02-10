@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct HGrid3: View {
+    let layout = [
+        GridItem(.flexible(maximum: 80)),
+        GridItem(.flexible(maximum: 100)),
+        GridItem(.flexible(maximum: 150))
+    ]
     var body: some View {
-        Text("Hello, World!")
+        ScrollView(.horizontal) {
+            LazyHGrid(rows: layout, spacing: 10) {
+                ForEach(1...100, id: \.self) {
+                    Text("Column \($0)")
+                }
+            } 
+        }
     }
 }
 
