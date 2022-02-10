@@ -10,9 +10,10 @@ import SwiftUI
 struct LazyHGrid2: View {
 let data = Array(1...100).map { "Index\($0)" }
 let layout = [
-    GridItem(.flexible(maximum: 80)),
-    GridItem(.flexible(maximum: 100)),
-    GridItem(.flexible(maximum: 150))
+    GridItem(.flexible(maximum: 50)),
+    GridItem(.flexible(maximum: 50)),
+    GridItem(.flexible(maximum: 50)),
+    GridItem(.flexible(maximum: 50))
 ]
 var body: some View {
     ScrollView(.horizontal) {
@@ -23,6 +24,7 @@ var body: some View {
                     Rectangle()
                         .frame(height: 5)
                 }
+                .frame(width: 100)
             }
         }
     }

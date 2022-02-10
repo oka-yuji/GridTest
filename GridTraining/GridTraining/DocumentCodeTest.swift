@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct DocumentCodeTest: View {
-    let data = Array(1...1000)
-    let layout = [GridItem(.adaptive(minimum: 50))]
+    let tags = ["アップル", "バナナ" ,"パイナップル","スイカ", "メロン" ,"キュウイ","ドリアン", "ドラゴンフルーツ" ,"マンゴー","ナシ", "オレンジ" ,"ライチ","レモン"]
+    let data = Array(0...12)
+    let layout = [GridItem(.adaptive(minimum: 60))]
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: layout) {
-                ForEach(data, id: \.self) { item in
-                    VStack {
-                        Text("\(item)")
-                          Rectangle()
-                            .frame(height: 5)
-                    }
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 10, maximum: .infinity))], spacing: 10) {
+                ForEach((0...12), id: \.self) { index in
+                    Text("\(tags[index])")
                 }
             }
         }
