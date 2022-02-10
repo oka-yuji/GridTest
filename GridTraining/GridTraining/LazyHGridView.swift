@@ -14,15 +14,19 @@ struct LazyHGridView: View {
         GridItem(.flexible(maximum: 100), spacing: 100),
         GridItem(.flexible(maximum: 150))
     ]
+    var rows: [GridItem] =
+    Array(repeating: .init(.fixed(20)), count: 2)
     var body: some View {
         ScrollView(.horizontal) {
-            LazyHGrid(rows: layout, spacing: 5) {
-                ForEach(data, id: \.self) { item in
-                    VStack {
-                        Text("\(item)")
-                          Rectangle()
-                            .frame(height: 5)
-                    }
+            LazyHGrid(rows: rows, alignment: .top) {
+                ForEach((0...79), id: \.self) {
+                    let codepoint = $0 + 0x1f600
+                    let codepointString = String(format: "%02X", codepoint)
+                    Text("\(codepointString)")
+                        .font(.footnote)
+                    let emoji = String(Character(UnicodeScalar(codepoint)!))
+                    Text("\(emoji)")
+                        .font(.largeTitle)
                 }
             }
         }
