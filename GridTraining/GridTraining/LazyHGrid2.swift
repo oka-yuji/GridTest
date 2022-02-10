@@ -10,7 +10,7 @@ import SwiftUI
 struct LazyHGrid2: View {
     var body: some View {
         ScrollView(.horizontal) {
-            LazyHStack(alignment: .top, spacing: 10) {
+            LazyHStack(alignment: .center, spacing: 10) {
                 ForEach(1...100, id: \.self) {
                     Text("Column \($0)")
                 }
