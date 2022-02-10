@@ -17,7 +17,7 @@ struct HGrid3: View {
         ScrollView(.horizontal) {
             LazyHGrid(rows: layout, spacing: 10) {
                 ForEach(1...100, id: \.self) {
-                    Text("Column \($0)")
+                    Text("row \($0)")
                 }
             } 
         }
