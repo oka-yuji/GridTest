@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct HGrid3: View {
-    let layout = [
-        GridItem(.flexible(maximum: 80)),
-        GridItem(.flexible(maximum: 100)),
-        GridItem(.flexible(maximum: 150))
-    ]
+    let tags = ["アップル", "バナナ" ,"パイナップル","スイカ", "メロン" ,"キュウイ","ドリアン", "ドラゴンフルーツ" ,"マンゴー","ナシ", "オレンジ" ,"ライチ","レモン"]
+    let data = Array(0...12)
+    let layout = [GridItem(.adaptive(minimum: 60))]
     var body: some View {
         ScrollView(.horizontal) {
-            LazyHGrid(rows: layout, spacing: 10) {
-                ForEach(1...100, id: \.self) {
-                    Text("row \($0)")
+            LazyHGrid(rows: [GridItem(.adaptive(minimum: 20))], spacing: 0) {
+                ForEach(data, id: \.self) { index in
+                    Text("\(tags[index])")
                 }
-            } 
+            }
         }
     }
 }
